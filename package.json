@@ -1,0 +1,29 @@
+{
+  "name": "slothpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bharding2/slothpack.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bharding2/slothpack/issues"
+  },
+  "homepage": "https://github.com/bharding2/slothpack#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  },
+  "devDependencies": {
+    "angular": "^1.5.5",
+    "gulp": "^3.9.1",
+    "webpack-stream": "^3.2.0"
+  }
+}
