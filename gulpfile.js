@@ -1,5 +1,5 @@
 const gulp = require('gulp');
-const webpack = require('webpack-strea');
+const webpack = require('webpack-stream');
 
 gulp.task('webpack:dev', () => {
   gulp.src('app/js/entry.js')
@@ -13,6 +13,8 @@ gulp.task('webpack:dev', () => {
 
 gulp.task('static:dev', () => {
   gulp.src('app/**/*.html')
+    .pipe(gulp.dest('./build'));
+  gulp.src('app/**/*.css')
     .pipe(gulp.dest('./build'));
 });
 

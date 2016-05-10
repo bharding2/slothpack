@@ -1,0 +1,10 @@
+body {
+  background-color: lime;
+}
+
+h1 {
+  width: 100%;
+  background-color: black;
+  color: lime;
+  padding: 2% 5%;
+}
