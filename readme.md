@@ -1,2 +1,5 @@
 ## SLOTHPACK
-#### super simple beginner angular app who's real purpose is to use webpack.
+#### super simple beginner angular app.
+* using webpack for bundling
+* using protractor for e2e testing
+* using gulp to gulp everything
