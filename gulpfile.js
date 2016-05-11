@@ -69,4 +69,4 @@ gulp.task('build:dev', ['webpack:dev', 'static:dev', 'css:dev']);
 gulp.task('lint', ['lint:server', 'lint:spec', 'lint:test', 'lint:app']);
 gulp.task('test', ['test:protractor']);
 
-gulp.task('default', ['build:dev', 'lint', 'test']);
+gulp.task('default', ['lint', 'test']);
