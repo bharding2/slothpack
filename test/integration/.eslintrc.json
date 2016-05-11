@@ -1,14 +1,12 @@
 {
   "env": {
     "browser": 1,
+    "protractor": true,
+    "jasmine": true,
     "es6": true
   },
   "globals": {
-    "angular": 1,
-    "browser": 1,
-    "element": 1,
-    "by": 1,
-    "expect": 1
+    "angular": 1
   },
   "rules": {
     "indent": ["error", 2],
