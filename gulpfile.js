@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const webpack = require('webpack-stream');
 const eslint = require('gulp-eslint');
+const angularProtractor = require('gulp-angular-protractor');
 
 var serverFiles = ['./*.js'];
 var specFiles = ['./test/**/*spec.js'];
@@ -32,7 +33,7 @@ gulp.task('lint:app', () => {
 });
 
 gulp.task('webpack:dev', () => {
-  gulp.src('app/js/entry.js')
+  return gulp.src('app/js/entry.js')
     .pipe(webpack({
       output: {
         filename: 'bundle.js'
@@ -44,11 +45,23 @@ gulp.task('webpack:dev', () => {
 gulp.task('static:dev', () => {
   gulp.src('app/**/*.html')
     .pipe(gulp.dest('./build'));
+});
+
+gulp.task('css:dev', () => {
   gulp.src('app/**/*.css')
     .pipe(gulp.dest('./build'));
 });
 
-gulp.task('build:dev', ['webpack:dev', 'static:dev']);
+gulp.task('test:protractor', ['build:dev'], () => {
+  return gulp.src(['./test/integration/*spec.js'])
+    .pipe(angularProtractor({
+      'configFile': './test/integration/config.js',
+      'debug': true,
+      'autoStartStopServer': true
+    }));
+});
+
+gulp.task('build:dev', ['webpack:dev', 'static:dev', 'css:dev']);
 gulp.task('lint', ['lint:server', 'lint:spec', 'lint:test', 'lint:app']);
 
 gulp.task('default', ['build:dev', 'lint']);
