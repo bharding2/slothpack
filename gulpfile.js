@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const webpack = require('webpack-stream');
 const eslint = require('gulp-eslint');
 const angularProtractor = require('gulp-angular-protractor');
+const server = require(__dirname + '/server.js');
 
 var serverFiles = ['./*.js'];
 var specFiles = ['./test/**/*spec.js'];
@@ -58,10 +59,14 @@ gulp.task('test:protractor', ['build:dev'], () => {
       'configFile': './test/integration/config.js',
       'debug': true,
       'autoStartStopServer': true
-    }));
+    }))
+    .on('end', () => {
+      server.close();
+    });
 });
 
 gulp.task('build:dev', ['webpack:dev', 'static:dev', 'css:dev']);
 gulp.task('lint', ['lint:server', 'lint:spec', 'lint:test', 'lint:app']);
+gulp.task('test', ['test:protractor']);
 
-gulp.task('default', ['build:dev', 'lint']);
+gulp.task('default', ['build:dev', 'lint', 'test']);
