@@ -44,12 +44,12 @@ gulp.task('webpack:dev', () => {
 });
 
 gulp.task('static:dev', () => {
-  gulp.src('app/**/*.html')
+  return gulp.src('app/**/*.html')
     .pipe(gulp.dest('./build'));
 });
 
 gulp.task('css:dev', () => {
-  gulp.src('app/**/*.css')
+  return gulp.src('app/**/*.css')
     .pipe(gulp.dest('./build'));
 });
 
