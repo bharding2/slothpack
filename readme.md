@@ -9,6 +9,6 @@
 * run the rest_api `node server.js` over there
 * `gulp build:dev` to do the build in the slothpack angular client
 * run slothpack `node server.js` so serve the angular client to localhost for browser access.
-* for testing you will need Karma installed globally
+* for testing you will need Karma and Protractor installed globally
 * to run the full battery of tests, just run `gulp` to get the default task
 * this stuff is all also in the rest_api (literally all of the stuff).
